@@ -1,0 +1,32 @@
+<div class="content">
+  <div *ngFor="let r of rooms">
+    <mat-card class="room-short-info">
+      <div class="display-flex">
+        <mat-card-subtitle>
+          <img class="shadow" mat-card-lg-image src="../../assets/C.jpg">
+        </mat-card-subtitle>
+
+        <div class="pad-10-left">
+          <mat-card-title>
+            {{r.name}}
+            <div class="font-size-small">
+              {{r.date.day}} {{r.date.number}} {{r.date.month}}
+            </div>
+          </mat-card-title>
+
+          <mat-card-content>
+
+            <div *ngFor="let t of r.reservation">
+              <div [routerLink]="r.id+'/'+t.id" class="time">
+                {{t.hourStart}}:{{t.minStart}} - {{t.hourEnd}}:{{t.minEnd}}
+              </div>
+            </div>
+
+          </mat-card-content>
+        </div>
+      </div>
+
+
+    </mat-card>
+  </div>
+</div>

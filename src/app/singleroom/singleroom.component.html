@@ -1,0 +1,19 @@
+<mat-card *ngIf="room">
+  <mat-card-title>{{room.name}}</mat-card-title>
+  <mat-card-subtitle>
+    <div *ngFor="let r of room.reservation">
+      <div *ngIf="r.id == reservationId">
+        {{r.hourStart}}:{{r.minStart}} - {{r.hourEnd}}:{{r.minEnd}}
+        <div>
+          Places:{{r.places.length}}
+        </div>
+      </div>
+    </div>
+  </mat-card-subtitle>
+  <mat-card-content>
+    User: {{room.reservation[0].username}}
+    <div>
+      <button mat-button>Ok!</button>
+    </div>
+  </mat-card-content>
+</mat-card>

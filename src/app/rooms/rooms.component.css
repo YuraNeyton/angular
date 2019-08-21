@@ -1,0 +1,7 @@
+.content {
+  display: flex;
+}
+.left-bar{
+  display: flex;
+  flex-direction: column;
+}
